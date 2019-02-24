@@ -1,0 +1,76 @@
+export default () =>[{
+  "city_name": "Edvard",
+  "province_name": "Margaritelli",
+  "city_id": 1,
+  "province_id": 1
+}, {
+  "city_name": "Luce",
+  "province_name": "Carruthers",
+  "city_id": 2,
+  "province_id": 2
+}, {
+  "city_name": "Ema",
+  "province_name": "Bramwich",
+  "city_id": 3,
+  "province_id": 3
+}, {
+  "city_name": "Paulo",
+  "province_name": "Margaritelli",
+  "city_id": 4,
+  "province_id": 1
+}, {
+  "city_name": "Germayne",
+  "province_name": "Cyster",
+  "city_id": 5,
+  "province_id": 5
+}, {
+  "city_name": "Ursa",
+  "province_name": "Margaritelli",
+  "city_id": 6,
+  "province_id": 1
+}, {
+  "city_name": "Adria",
+  "province_name": "Fleckno",
+  "city_id": 7,
+  "province_id": 7
+}, {
+  "city_name": "Evelyn",
+  "province_name": "Margaritelli",
+  "city_id": 8,
+  "province_id": 1
+}, {
+  "city_name": "Casi",
+  "province_name": "Lineham",
+  "city_id": 9,
+  "province_id": 9
+}, {
+  "city_name": "Allin",
+  "province_name": "Kemet",
+  "city_id": 10,
+  "province_id": 10
+}, {
+  "city_name": "Nicolina",
+  "province_name": "Jess",
+  "city_id": 11,
+  "province_id": 11
+}, {
+  "city_name": "Nikki",
+  "province_name": "Choudhury",
+  "city_id": 12,
+  "province_id": 12
+}, {
+  "city_name": "Becca",
+  "province_name": "Sherington",
+  "city_id": 13,
+  "province_id": 13
+}, {
+  "city_name": "Duky",
+  "province_name": "Boyfield",
+  "city_id": 14,
+  "province_id": 14
+}, {
+  "city_name": "Lavinia",
+  "province_name": "Covely",
+  "city_id": 15,
+  "province_id": 15
+}]
