@@ -19,10 +19,6 @@ class CitiesList extends Component {
         this.props.selectLibrary(null)
     }
     renderRow(lib){
-        
-       // const { itemSelected } = this.props
-       // debugger
-       console.log(this.props)
         return <CityRow city={lib.item} onRowClicked={this.itemSelected} />
     }
 
@@ -42,6 +38,6 @@ class CitiesList extends Component {
 }
 
 const mapStateToProps = state => { 
-    return {lib : state.provinceList }
+    return {lib : state.locationItems }
 }
 export default connect(mapStateToProps , action)(CitiesList);

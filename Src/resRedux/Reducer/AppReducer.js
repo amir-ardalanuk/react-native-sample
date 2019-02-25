@@ -4,11 +4,13 @@ import SelectedLib from './SelectedLibReducer'
 import LoginReducer from './LoginReducer'
 import ProvinceReducer from './ProvinceReducer'
 import CitiesReducer from './CitiesReducer'
+import LocationItem from './LocationItemReducer'
 
 export default combineReducers({
     lib : LibraryReducer ,
     selectLibrary : SelectedLib,
     loginProps: LoginReducer ,
     updatedCities :CitiesReducer,
-    provinceList : ProvinceReducer
+    provinceList : ProvinceReducer,
+    locationItems : LocationItem
 })

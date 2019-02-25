@@ -1,4 +1,4 @@
-import {LoginUserType , LoginUserFail , LoginUserLoading} from '../type'
+import {LoginUserType , LoginUserFail , LoginUserLoading , FILTER_PROV} from '../type'
 const INITIAL_STATE = {
     email : '' , 
     password : '' , 
@@ -7,7 +7,6 @@ const INITIAL_STATE = {
     loading : false
 }
 export default (state = INITIAL_STATE , action) => {
-    console.log('Reducer:' , action)
     switch (action.type){
         case  LoginUserType: 
         return {...state , user:true}

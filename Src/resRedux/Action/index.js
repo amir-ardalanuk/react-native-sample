@@ -1,4 +1,5 @@
-import { LoginUserType , LoginUserFail , LoginUserLoading} from '../type'
+import { LoginUserType , LoginUserFail , LoginUserLoading , FILTER_PROV} from '../type'
+
 export const selectLibrary = (libId) => { 
     return {
         type : 'select_library',
@@ -17,6 +18,12 @@ export const selectProv = (prov) => {
     return {
         type : 'select_prov',
         payload:prov   
+    }
+}
+export const filterProv = (text) => { 
+    return {
+        type : FILTER_PROV,
+        payload:text   
     }
 }
 

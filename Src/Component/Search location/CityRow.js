@@ -11,13 +11,12 @@ class CityRow extends Component {
     constructor(props){
         super(props)
         this.selected = this.selected.bind(this)
-        console.log(this.props)
         this.onRowClicked = this.props.onRowClicked.bind(this)
     }
 
     selected(city) {
-        this.props.selectProv(city)
-       // this.onRowClicked(city)
+       // this.props.selectProv(city)
+         this.onRowClicked(city)
     }
 
     renderView(){
@@ -28,7 +27,7 @@ class CityRow extends Component {
         if (selectedLibId === city.province_id) { 
             styles.push({backgroundColor:'#44e3e3e3'}) 
         }
-        console.log(styles)
+
         return styles
            
     }
@@ -36,8 +35,6 @@ class CityRow extends Component {
     render(){
         const { textTitle , textDesc} = style;
         const { province_name ,  province_id } = this.props.city
-       
-        console.log(this.props);
         return(
             <ImageBackground source = {{
                 uri: ""
