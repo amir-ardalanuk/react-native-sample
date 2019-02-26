@@ -5,6 +5,7 @@ import LoginReducer from './LoginReducer'
 import ProvinceReducer from './ProvinceReducer'
 import CitiesReducer from './CitiesReducer'
 import LocationItem from './LocationItemReducer'
+import UserTrips from './UserTripsReducer'
 
 export default combineReducers({
     lib : LibraryReducer ,
@@ -12,5 +13,6 @@ export default combineReducers({
     loginProps: LoginReducer ,
     updatedCities :CitiesReducer,
     provinceList : ProvinceReducer,
-    locationItems : LocationItem
+    locationItems : LocationItem , 
+    userTrips : UserTrips
 })
