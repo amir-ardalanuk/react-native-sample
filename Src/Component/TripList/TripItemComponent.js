@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import CircularImage from './../View/CircularImage'
 import * as actions from '../../resRedux/Action/index'
 
-
 PROFILE_IMAGE_SIZE = 65
+
 class TripRowComponent extends Component {
 
 
@@ -59,6 +59,7 @@ class TripRowComponent extends Component {
                         {/* Seprator */}
                         <View style={{ backgroundColor: '#e3e3e3', height: 1, width: null, marginTop: 8, marginBottom: 8 }} ></View>
                         {/* Top View's Style */}
+                       
                         <View style={{
                             flexDirection: 'row',
                             justifyContent: 'space-between'
