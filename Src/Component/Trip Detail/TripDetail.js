@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux'
+import CircularImage from './../View/CircularImage'
 
-export default class componentName extends Component {
+export default class TripDetail extends Component {
     constructor(props) {
         super(props);
-        const { textTitle, textDesc , card } = style;
+        
         this.state = {
         };
     }
 
     renderTripInfo() {
+        const { textTitle, textDesc , card } = style;
         return (
             <View>
                 <Text> Trip info </Text>
@@ -21,6 +23,7 @@ export default class componentName extends Component {
     }
 
     renderTripLocation() {
+        const { textTitle, textDesc , card } = style;
         return (
             <View style={{
                 flexDirection: 'column',
@@ -31,10 +34,10 @@ export default class componentName extends Component {
                     <View style={{ flexDirection: 'column', justifyContent: 'space-between', }}>
 
                         <Text style={textTitle}>
-                            {trip.item.fromName}
+                            {/* {trip.item.fromName} */ "from name"}
                         </Text>
                         <Text style={textTitle}>
-                            {trip.item.toName}
+                            {/* {trip.item.toName} */ "to name"}
                         </Text>
                     </View>
                     <View style={{ backgroundColor: 'blue', height: null, width: 1, marginTop: 8, marginBottom: 8 }} ></View>
@@ -58,6 +61,7 @@ export default class componentName extends Component {
     }
 
     renderTripPriceAndPlace(){
+        const { textTitle, textDesc , card } = style;
         return(
             <View style={{flexDirection:'column'  }}>
                 <Text>
@@ -72,15 +76,17 @@ export default class componentName extends Component {
         
 
     renderTripDriver() {
+        const { textTitle, textDesc , card } = style;
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }} >
                 <View></View>
                 <View style={{ flexDirection: 'column', justifyContent: 'space-around', }}>
                     <Text style={textTitle}>
-                        {trip.item.driverName + " " + trip.item.driverFamily}
+                        {/* {trip.item.driverName + " " + trip.item.driverFamily} */ "driver name + driver family"}
+
                     </Text>
                     <Text style={textDesc}>
-                        {trip.item.driverCarModel + " " + trip.item.driverCarColor}
+                        {/* {trip.item.driverCarModel + " " + trip.item.driverCarColor} */ "driver car model + driver car color"}
                     </Text>
                 </View>
                 <CircularImage size={PROFILE_IMAGE_SIZE} sourceLink={require('./../../Resource/imgPRo.jpg')} />
