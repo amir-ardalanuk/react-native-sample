@@ -3,7 +3,7 @@ import reducers from './resRedux/Reducer/AppReducer';
 import ReduxThunk from 'redux-thunk';
 import { createAppContainer, createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
 import { ListItem, Profile, Splash, Login } from './Component/';
-import {Home,Dashboard,SearchLocation , TripList , TripDetail} from './Component/'
+import {Home,Dashboard,SearchLocation , TripList , TripDetail , LotteryList , LotteryDetail} from './Component/'
 
 const LoginStack = createStackNavigator({
   signIn: Login
@@ -19,9 +19,11 @@ const HomeStack = createStackNavigator({
   SearchLocation,
   Dashboard,
   TripDetail,
-  List: ListItem
+  List: ListItem,
+  LotteryList,
+  LotteryDetail,
 }, {
-  initialRouteName: 'TripDetail',
+  initialRouteName: 'LotteryDetail',
 });
 const ProfileStack = createStackNavigator({
   Profile: Profile

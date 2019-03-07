@@ -8,6 +8,9 @@ import _Splash from './Splash/SplashCntrl'
 import _TripList from './TripList/TripListCntrl'
 import _TripDetail from './Trip Detail/TripDetail'
 
+import _LotteryList from './LotteryList/LotteryList'
+import _LotteryDetail from './LotteryDetail/LotteryDetail'
+
 export const Splash = _Splash
 export const SearchLocation = _SearchLocation
 export const Profile = _Profile
@@ -17,3 +20,5 @@ export const Home = _Home
 export const Dashboard = _Dashbard
 export const TripList = _TripList
 export const TripDetail = _TripDetail
+export const LotteryList = _LotteryList
+export const LotteryDetail = _LotteryDetail
