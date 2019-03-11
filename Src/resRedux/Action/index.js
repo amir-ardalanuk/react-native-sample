@@ -27,11 +27,11 @@ export const filterProv = (text) => {
     }
 }
 
-export const loginUser = ({email = null , pass = null}) => { 
+export const loginUser = ({mobile = null}) => { 
     return (disptach) =>  {
         disptach({type:LoginUserLoading})
         setTimeout( ()=>{
-            if(email === "Amir" && pass === "1234"){
+            if(mobile === "09196475280"){
                 disptach({ type : LoginUserType , payload:{state : true}})
             }else{
                 loginFailed(disptach)

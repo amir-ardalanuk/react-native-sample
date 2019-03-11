@@ -1,7 +1,10 @@
 
 import React, { Component } from 'react'
-import { Text, SafeAreaView,View ,TextInput,StyleSheet , TouchableHighlight} from 'react-native'
-import {Button} from '../View'
+import { Text, SafeAreaView, View, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { Button, ButtonImage } from '../View'
+import GiftList from './GiftList/GiftList'
+import CouponItem from './../Coupon/CouponList'
+import { PlusCode, Detail } from './../../Resource/icons'
 
 
 export default class LotteryDetail extends Component {
@@ -9,93 +12,113 @@ export default class LotteryDetail extends Component {
         super(props);
 
         this.state = {
-            codeInputCount:2
+            codeInputCount: 1
         };
     }
 
-
-    
-
-    generateCodeInput(){
+    InputCode() {
         return (
-            <View style={{width: null,flexDirection:'column' , }}>
-                {
-                   Array.apply(0,Array(this.state.codeInputCount)).map(function(x, i){
-                        //return this.needCodeInput()
-                       return (  <View key= {(i +" ")} style={{height: 50,width: null,flexDirection:'row',marginTop: 5,}}>
-                       <Button text={"Add"}   />
-                        <TextInput style={style.codeInput}  placeholder={"enter your code"} />
-                                    
-                   </View>)
-                    })
-                //   Array.apply(0,this.codeInputCount).map(function(x, i){
-                //       return this.needCodeInput()
-                //   })
-                  }
+            <View style={style.codeContainer}>
+
+                <View style={{ height: 50, width: null, flexDirection: 'row' }}>
+                    <TextInput style={style.codeInput} placeholder={"Enter your code"} />
+                    <ButtonImage style={{ height: 50, width: 50 }} imageSource={PlusCode} />
+                </View>
             </View>
         )
     }
 
     CountDownCmp() {
         console.log(style)
-        const {countDownContainer ,countDowner,countDownerText , infoView} = style
-        
+        const { countDownContainer, countDowner, countDownerText, infoView } = style
+
         return (
             <View style={countDownContainer}>
-            <View></View>
                 <View style={countDowner}>
                     <Text style={countDownerText}>
                         12:12:12
                 </Text>
                 </View>
-                <View style={infoView}></View>
+                <ButtonImage style={infoView} imageSource={Detail} />
+
             </View>
         )
     }
 
     render() {
         return (
-            <SafeAreaView style={{flex: 1}}>
-               {this.CountDownCmp()}
-               {this.generateCodeInput()}
-               <Button text={"Add More Code"} style={{backgroundColor:'red',margin:22 , height:40}} />
-            </SafeAreaView>
+            <KeyboardAvoidingView style={{ flex: 1 }} behavior='height' > 
+            
+                <View style={{margin:8}}>
+                    {this.CountDownCmp()}
+                    {this.InputCode()}
+                </View>
+
+                <CouponItem style={{ flex: 1, margin: 8 }} />
+                <GiftList style={{ width: null, position: 'absolute', bottom: 8, left: 8 }} />
+            </KeyboardAvoidingView>
         );
     }
 }
 const style = StyleSheet.create({
+    codeContainer: {
+        padding: 8,
+        width: null,
+        height: 66,
+        borderRadius: 10,
+        backgroundColor: "#ffffff",
+        borderStyle: "dashed",
+        borderWidth: 2,
+        borderColor: "#001f75",
+        justifyContent: 'center',
+        alignItems: 'stretch'
+    },
     countDownContainer: {
         width: null,
         height: 100,
         flexDirection: 'row',
-        justifyContent:'center',
+        justifyContent: 'center',
         alignItems: 'center',
-    },countDowner: {
+        borderRadius: 10,
+        backgroundColor: "#ffffff",
+        borderStyle: "dashed",
+        borderWidth: 2,
+        borderColor: "#001f75",
+    },
+    countDowner: {
         padding: 8,
-        backgroundColor:'gray',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 12,
-    }, countDownerText: {
-        padding:12,
-        color: 'white',
-    }, infoView: {
+        fontSize: 43,
+    },
+    countDownerText: {
+        padding: 12,
+        fontSize: 43,
+        color: '#002075',
+    },
+    infoView: {
         position: 'absolute',
-        bottom: 10,
-        right: 10,
-        backgroundColor: 'blue',
+        alignSelf: 'center',
+        right: 12,
         width: 50,
         height: 50,
         padding: 8,
-    },codeInput: {
+    },
+    codeInput: {
+        textAlign: 'center',
         flex: 1,
-        padding:10,
+        borderRadius: 5,
+        backgroundColor: "#e40b5f",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "#001f75"
     },
     button: {
-        justifyContent:'center',
-        alignItems:'center',
-        backgroundColor:'green' , 
-        flex:1 , 
-        borderRadius:10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'green',
+        flex: 1,
+        borderRadius: 10,
     }
 }) 

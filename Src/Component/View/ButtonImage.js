@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import { Text, View,TouchableHighlight } from 'react-native'
+import { Image, View,TouchableHighlight } from 'react-native'
 
 
-export default Button = ({text,style , onPress}) => {
+export default ButtonImage = ({style , onPress , imageSource}) => {
     return (
        
             <TouchableHighlight style = {style} onPress={onPress}  >
                 <View style={_style.button}>
-                    <Text style={{padding:15,flex:1,textAlign:'center'}}>
-                        {text}
-                    </Text>
+                    <Image style={{padding:15,flex:1,resizeMode: 'contain'}} source={imageSource} >
+                    </Image>
                 </View>
             </TouchableHighlight>
     )
@@ -18,7 +17,8 @@ const _style = {
     button: {
     justifyContent:'center',
     alignItems:'center',
-    flex:1 , 
+    flex:1 ,
+        padding: 4,
 
 }
 }

@@ -2,10 +2,10 @@
 import React , {Component } from 'react';
 import { FlatList } from 'react-native';
 import {connect } from 'react-redux'
-import ListRow from './CouponItem'
-import * as action from  '../../resRedux/Action'
+import GiftRow from './GiftListItem'
+import * as action from  './../../../resRedux/Action'
 
-class CouponList extends Component {
+class GiftList extends Component { 
 
     componentWillMount(){
     }
@@ -14,7 +14,7 @@ class CouponList extends Component {
         this.props.selectLibrary(null)
     }
     renderRow(lib){
-        return <ListRow libarary={lib}  />
+        return <GiftRow libarary={lib}  />
     }
 
     render() {
@@ -22,10 +22,10 @@ class CouponList extends Component {
         return(
             
                 <FlatList 
-                style ={{...this.props.style, flex : 1}}
+                horizontal
+                style ={{...this.props.style,}}
                 data = {this.props.lib}
                 renderItem = {this.renderRow}
-                 numColumns={3}
                 keyExtractor={(item, index) => index.toString()} >
                 </FlatList>
             
@@ -36,4 +36,4 @@ class CouponList extends Component {
 const mapStateToProps = state => { 
     return {lib : state.lib }
 }
-export default connect(mapStateToProps , action)(CouponList);
+export default connect(mapStateToProps , action)(GiftList);

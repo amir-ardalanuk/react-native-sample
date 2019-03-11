@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE , action) => {
     switch (action.type){
         case  LoginUserType: 
-        return {...state , user:true}
+        return {...state,loading : false, user:true}
 
         case  LoginUserFail: 
         return {...state , error:'fail authenticate' , password : '',loading : false}

@@ -5,9 +5,9 @@ import * as actions from '../../resRedux/Action/index'
 
 
 
-class LotteryRow extends Component { 
+class CouponItem extends Component {
 
- 
+
     constructor(props){
         super(props)
         this.selected = this.selected.bind(this)
@@ -21,92 +21,75 @@ class LotteryRow extends Component {
         const { selectedLibId , libarary } = this.props
         const {  container} = style;
         var styles = [container]
-        
-        if (selectedLibId === libarary.item.id) { 
-            styles.push({backgroundColor:'#44e3e3e3'}) 
+
+        if (selectedLibId === libarary.item.id) {
+            styles.push({backgroundColor:'#44e3e3e3'})
         }
         console.log(styles)
         return styles
-           
+
     }
 
     render(){
-        const { textTitle , textDesc , gift , giftText} = style;
+        const { textTitle} = style;
         const { libarary } = this.props
         console.log(this.props);
         return(
-            <ImageBackground source = {{
-                uri: libarary.item.picture
-              }}  style={{flex :1 , flexDirection: 'column'}}> 
-                <TouchableWithoutFeedback style ={{flex :1 , flexDirection: 'row' , justifyContext:'center' }} onPress={ () =>
+            <View style={style.couponContainer}>
+                <TouchableWithoutFeedback style ={{flex :1 , justifyContext:'center',alignItems:'center' }} onPress={ () =>
                     this.selected(libarary.item.id)
                 }>
-             
-                 <View style ={ this.isSelectedView() } >
+
+                 <View style ={{ justifyContent:'center' ,
+                     alignItems: "center",flex:1}} >
                     <Text style={textTitle}>
                         {libarary.item.title}
                     </Text>
-                    
-                    <Text style={textDesc}>
-                     {libarary.item.desc}
-                    </Text>
-
-                    <View style={gift}>
-                    <Text >
-                        "Catch your Gift"
-                    </Text>
-
-                    </View>
 
                 </View>
-                
+
             </TouchableWithoutFeedback>
 
-            </ImageBackground>
-           
-            
+            </View>
+
+
         )
     }
 }
 
-const style = {
+const style = StyleSheet.create({
+    couponContainer : {
+        height: 41.9,
+        width: 90,
+        margin: 1,
+        borderRadius: 10,
+        backgroundColor: "#ffffff",
+        
+        flexDirection: 'column',
+        borderColor:'red',
+        borderStyle:'dotted',
+        borderWidth:1.5,
+    },
     textTitle :{
-        fontSize : 22,
+        fontSize : 15,
         color:'#000',
-        padding:12,
-        textAlign : 'center',
-       
-    },
-    textDesc :{
-        fontSize : 16,
-        color:'#000',
-        padding:12,
         textAlign : 'center',
     },
+   
     container :{
         flex: 1,
         justifyContent : 'center' ,
         alignItems: 'center',
         padding: 16,
         aspectRatio:1
-        
-    },
-    gift: {
-        justifyContent: 'center',
-        backgroundColor:"rgb(73,121,246)",
-        borderRadius: 12,
-        padding:12,
-    },giftText: {
-        color: 'white',
-        fontSize : 16,
-        flex: 1,
-        
-    }
-}
 
-const mapStateToProps =  state => { 
+    },
+    
+})
+
+const mapStateToProps =  state => {
     return {selectedLibId : state.selectLibrary}
 }
 
-export default  connect(mapStateToProps , actions)(LotteryRow);
-//export default LotteryRow;
+export default  connect(mapStateToProps , actions)(CouponItem);
+//export default CouponItem;

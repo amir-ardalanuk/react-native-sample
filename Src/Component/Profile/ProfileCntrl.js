@@ -80,8 +80,6 @@ class ProfileCntrl extends Component {
                     </Animated.View>
                     <View><Text style={{fontWeight: 'bold',fontSize: 26,}}>Amir Ardalani</Text></View>
                 </ScrollView>
-                
-                <Text>Profile</Text>
             </View>
         )
     }

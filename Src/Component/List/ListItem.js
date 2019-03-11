@@ -22,6 +22,7 @@ class ListItem extends Component {
         return(
             
                 <FlatList 
+                horizontal
                 style ={{flex : 1}}
                 data = {this.props.lib}
                 renderItem = {this.renderRow}

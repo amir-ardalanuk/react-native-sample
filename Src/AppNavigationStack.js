@@ -2,11 +2,13 @@ import { createStore, applyMiddleware } from 'redux';
 import reducers from './resRedux/Reducer/AppReducer';
 import ReduxThunk from 'redux-thunk';
 import { createAppContainer, createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
-import { ListItem, Profile, Splash, Login } from './Component/';
+import { ListItem, Profile, Splash, Login , CodeAuth } from './Component/';
 import {Home,Dashboard,SearchLocation , TripList , TripDetail , LotteryList , LotteryDetail} from './Component/'
 
 const LoginStack = createStackNavigator({
-  signIn: Login
+  signIn: Login,
+  CodeAuth,
+ 
 });
 
 const SplashStack = createStackNavigator({
@@ -25,6 +27,7 @@ const HomeStack = createStackNavigator({
 }, {
   initialRouteName: 'LotteryDetail',
 });
+
 const ProfileStack = createStackNavigator({
   Profile: Profile
 });
@@ -37,7 +40,7 @@ const AppStack = createSwitchNavigator({
   splashStack: SplashStack,
   login: LoginStack
 }, {
-    initialRouteName: 'splashStack',
+    initialRouteName: 'login',
   });
 export const AppContainer = createAppContainer(AppStack);
 export const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
