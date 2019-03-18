@@ -25,22 +25,37 @@ const HomeStack = createStackNavigator({
   LotteryList,
   LotteryDetail,
 }, {
-  initialRouteName: 'LotteryDetail',
+  initialRouteName: 'LotteryList',
 });
-
+const RootStack = createStackNavigator(
+  {
+    HomeStack: HomeStack,
+     Profile,
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
 const ProfileStack = createStackNavigator({
   Profile: Profile
-});
-const HomeTabbar = createBottomTabNavigator({
-  HomeStack: HomeStack,
-  ProfileStack: ProfileStack
-});
+}, );
+// const HomeTabbar = createBottomTabNavigator({
+//   HomeStack: HomeStack,
+//   ProfileStack: ProfileStack
+// });
 const AppStack = createSwitchNavigator({
-  tabBar: HomeTabbar,
+  // HomeStack: HomeStack,
+  // Profile,
+  RootStack,
   splashStack: SplashStack,
-  login: LoginStack
+  login: LoginStack,
+  
 }, {
-    initialRouteName: 'login',
+    initialRouteName: 'RootStack',
+  },{
+    mode: 'card',
+    headerMode: 'none',
   });
 export const AppContainer = createAppContainer(AppStack);
 export const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));

@@ -70,7 +70,7 @@ class GiftListItem extends Component {
 }
 
 const style = StyleSheet.create({
-    giftView: { flex: 1, margin: 8, flexDirection: 'column', overflow: 'hidden', borderRadius: 10, borderWidth: 1, borderColor: 'blue', },
+    giftView: { flex: 1, margin: 8, flexDirection: 'column', overflow: 'hidden', borderRadius: 10, borderWidth: 1, borderColor: 'blue', backgroundColor:'white'},
     textTitle: {
         fontSize: 18,
         color: '#000',
