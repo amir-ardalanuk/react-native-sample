@@ -29,12 +29,12 @@ class LotteryHistory extends Component {
         console.log(this.props)
         const { container, header, footer, headerRight, headerLeft, lotteryImage } = style
         return (
-            <View style={{ padding: 18,...Theme.cardStyle }}>
+            <View style={{ padding: 8,...Theme.cardStyle }}>
                 <View style={container} >
                     <View style={header}>
 
                         <View style={headerLeft}>
-                            <Text>Souce</Text>
+                            <Text> ABC </Text>
                             <View style={{flexDirection:'row' , alignSelf:'stretch',justifyContent:'space-around'}}>
                             {this.renderState("Win" , "5")}
                             {this.renderState("progress" , "5")}
